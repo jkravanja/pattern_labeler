@@ -1,3 +1,4 @@
+--from  https://github.com/oxford-cs-ml-2015/practical6
 require 'torch'
 
 local model_utils = {}
