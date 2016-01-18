@@ -7,4 +7,4 @@ The code is used for labeling projected patterns in active triangulation systems
 
 The image below shows an example of the projected pattern on the scene.
 
-![https://github.com/jkravanja/pattern_labeler/blob/master/img/00000.png]
+![Projected pattern on the scene](https://github.com/jkravanja/pattern_labeler/blob/master/img/00000.png)
