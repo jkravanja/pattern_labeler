@@ -8,3 +8,21 @@ The code is used for labeling projected patterns in active triangulation systems
 The image below shows an example of the projected pattern on the scene.
 
 ![Projected pattern on the scene](https://github.com/jkravanja/pattern_labeler/blob/master/img/00000.png)
+
+The input image is split into smaller (20x20 pixels) subimages and flattened to 400-dimensional vector.
+
+![Subimages](https://github.com/jkravanja/pattern_labeler/blob/master/img/a.png)
+
+This results in a sequence (subimages taken column-wise from the original input image) of 400-dimensional vectors which are fed to the input of LSTM. In each timestep, the LSTM produceces a probability distribution over labels at the output, one for each subimage at the input. The labels with max value are taken.
+
+An example of labeled image is shown below.
+
+![Labeled image](https://github.com/jkravanja/pattern_labeler/blob/master/img/1.jpg)
+
+And the groundtruth
+
+![Ground truth](https://github.com/jkravanja/pattern_labeler/blob/master/img/l_00001.jpg)
+
+It is also interesting to observe, what kind of filters the network learned at the first (input) layer (see image below).
+
+![filters](https://github.com/jkravanja/pattern_labeler/blob/master/img/filters_noise_0.png)
