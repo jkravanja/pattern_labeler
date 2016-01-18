@@ -6,7 +6,6 @@ require 'cutorch'
 require 'cunn'
 
 local LSTM = require 'LSTM'             -- LSTM timestep and utilities
---require 'Embedding'                     -- class name is Embedding (not namespaced)
 local model_utils=require 'model_utils'
 
 function round(x)
@@ -133,7 +132,7 @@ for val_i=opt.start_val,n_val do
 	    local predictions = {}           -- softmax outputs
 	    local loss = 0
 
-	    local n_index=s_train[torch.randperm(152-20)[1]] -- choose next indes; 1-132, leave 20 for test
+	    local n_index=s_train[torch.randperm(152-20)[1]] -- choose next index; 1-132, leave 20 for test
 		
             local inp_data=trainSet.data[{n_index,{}}]:clone()
 	    local noise=torch.randn(1160,400):mul(opt.noise) --add approximately opt.noise of Gaussian noise
